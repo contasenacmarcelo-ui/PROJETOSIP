@@ -12,7 +12,8 @@ body{
 
 header{
     display: grid;
-    grid-template-columns: 90% 0px;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
     padding: 2%;
 }
 
@@ -50,9 +51,9 @@ header .side-left img{
     transition: ease .05s;
 }
 
-.nav-celular{
-    display: none;
-}
+/* ------------------------------------------ Menu mobile -------------------------------------------------------------------------------------- */
+
+
 
 /* ------------------------------------------ Main -------------------------------------------------------------------------------------- */
 
@@ -119,9 +120,11 @@ button{
     }
 
     .nav-celular .bi-list {
-    font-size: 50px;  /* ou o tamanho que quiser */
-    cursor: pointer;  /* opcional, para indicar que é clicável */
-    color: white;     /* para garantir visibilidade */
+    font-size: 40px;  
+    cursor: pointer;  
+    color: white;
+    display: flex;
+    align-items: center;  
     }
 }
 
@@ -157,5 +160,17 @@ button{
 
 }
 
+@media (max-width: 480px){
+    .main-right img{
+        max-width: 320px
+    }
+    main h1{
+        font-size: 60px;
+        width: 350px;
+    }
+    main p{
+        width: 330px;
+    }
+}
 
 /* rgb(141, 245, 255); */
