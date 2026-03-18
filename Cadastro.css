@@ -1,0 +1,189 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+
+body{
+    background-color: #021124;
+}
+
+/* ------------------------------------------ Header -------------------------------------------------------------------------------------- */
+
+header{
+    display: grid;
+    grid-template-columns: 90% 0px;
+    padding: 2%;
+}
+
+.side-left{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center; 
+    gap: 10px; 
+    font-family: "Readex Pro", sans-serif;
+    color: white;
+}
+
+
+header .side-left img{
+    width: 90px;
+    height: 50px;
+}
+
+.side-right{
+    display: grid;
+    align-items: center; 
+    grid-template-columns: auto 1fr;
+    gap: 20px; 
+}
+
+.side-right a{
+    font-family: "Readex Pro", sans-serif;
+    color: white;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.side-right a:hover{
+    transform: scale(1.2);
+    transition: ease .05s;
+}
+
+.nav-celular{
+    display: none;
+}
+
+/* ----------Main------------- */
+
+/* ---------- Main / Card Styling ------------- */
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; /* Garante que o card fique centralizado verticalmente */
+}
+
+/* O container principal do formulário */
+.card-container nav {
+    background-color: #0b1e33; /* Um azul levemente mais claro que o body */
+    height: auto; /* Deixa o conteúdo ditar a altura */
+    width: 380px;
+    padding: 40px 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borda sutil para dar profundidade */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-family: "Sora", sans-serif;
+}
+
+.title {
+    font-family: "Outfit", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+    color: white;
+}
+
+/* Estilização dos grupos de input */
+.label-01, .label-02 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.E-mail, .senha {
+    font-size: 14px;
+    font-weight: 300;
+    color: #cbd5e1;
+    margin-left: 5px;
+}
+
+input {
+    width: 100%;/* Ajusta ao container */
+    height: 45px ;
+    background-color: #162a45;
+    border: 1px solid #2d4464;
+    border-radius: 8px;
+    padding: 0 15px;
+    color: white;
+    font-family: "Sora", sans-serif;
+    transition: 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-color: #00d4ff; 
+    background-color: #1c3557;
+}
+
+/* Botão Entrar */
+.btn-Entrar {
+     font-family: "Sora", sans-serif;
+    background-color: #10b981;
+    color: #021124;
+    font-weight: 700;
+    letter-spacing: 1px;
+    width: 100%;
+    height: 45px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.btn-Entrar:hover {
+    background-color: #34d399;
+    transform: translateY(-2px);
+}
+
+/* Links e Textos de suporte */
+.txt1, .txt2 {
+    font-size: 13px;
+    text-align: center;
+    color: #94a3b8;
+}
+
+.txt1 {
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.txt1:hover {
+    color: #00d4ff;
+
+}
+
+.Cadastre-se-txt {
+    color: #00d4ff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.Cadastre-se-txt:hover {
+    text-decoration: underline;
+    transform: scale(1.2);
+}
+#checkbox{
+    height: 20px;
+    width: 20px;
+}
+div{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    color: white;
+    font-size: 15px;
+    align-items: center;
+}
+
+.checkboxA{
+    color: rgb(143, 143, 143);
+}
