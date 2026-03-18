@@ -136,13 +136,14 @@ header .side-left img{
 
 .action-buttons {
     display: flex;
-    justify-content: flex-end;
-    gap: 15px;
+    justify-content:center;
     margin-top: 10px;
 }
 
+/* Remova ou ignore a estilização do .checkbox-wrapper já que ele não existe mais */
+
 .btn-primary {
-    background-color: #10b981; /* Verde esmeralda */
+    background-color: #10b981; /* O verde agora fica ativo por padrão */
     color: #021124;
     padding: 12px 25px;
     border-radius: 8px;
@@ -153,15 +154,11 @@ header .side-left img{
     transition: 0.3s ease;
 }
 
-.btn-primary:disabled {
-    background-color: #2d4464;
-    color: #94a3b8;
-    cursor: not-allowed;
-}
-
-.btn-primary:hover:not(:disabled) {
+/* Você pode apagar a regra .btn-primary:disabled se quiser limpar o código */
+.btn-primary:hover {
     background-color: #34d399;
     transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3); /* Adicionei um brilho no hover */
 }
 
 .btn-secondary {
