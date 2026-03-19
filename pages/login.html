@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Datatype:wght@100..900&display=swap" rel="stylesheet">
@@ -22,36 +20,42 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
 
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="style.css">
-    <title>SIP</title>
+    <title>Login | SIP</title>
+    <link rel="stylesheet" href="../css/login.css">
 </head>
 
 <body>
     <header>
         <section class="side-left">
-            <a href="index.html"><img src="assets/Acrônimo SIP iluminado em azul.png" alt="Logo"></a>
-            <span>Sistema Integrado de Portfolio</span>
+            <a href="index.html"><img src="../assets/images/acronimo_sip_iluminado_em_azul.png" alt="Logo">
+            </a> <span>Sistema Integrado de Portfolio</span>
         </section>
         <section class="side-right">
-            <a href="Login.html">Entrar</a>
-            <a href="">Cadastrar</a>
+        
         </section>
-        <nav class="menu-mobile">
+        <nav class="nav-celular">
+            <i class="bi bi-list"></i>
         </nav>
     </header>
-    <main>
-        <section class="main-left">
-            <h1>Transforme suas ideias em sites!</h1>
-            <p>Dê vida à sua criatividade com soluções digitais sob medida. Desenvolvemos sites únicos, modernos e
-                estratégicos, pensados para destacar sua marca e superar todas as suas expectativas — do design à
-                performance.</p>
-            <a href="shop.html"><button class="aButton">Agende sua consultoria</button></a>
+    <main class="card-container">
+       <nav>
+        <h1 class="title">Acesse sua conta</h1>
+        <section class="label-01">
+            <p class="E-mail">E-mail</p>
+            <input class="input-E-mail" placeholder="E-mail" type="text">
         </section>
-        <figure class="main-right">
-            <img src="assets/mainImage.png" alt="">
-        </figure>
+        <section class="label-02">
+            <p class="senha">Senha</p>
+            <input class="input-senha" placeholder="Senha" type="text">
+        </section>
+        
+        <button class="btn-Entrar">ENTRAR</button>
+        
+    <p class="txt2">Não tem conta? <a  class="Cadastre-se-txt" href="cadastro.html">Cadastre-se</a></p>
+        </nav>
     </main>
 </body>
+
 </html>
