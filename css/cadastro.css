@@ -57,7 +57,6 @@ header .side-left img{
 
 /* ----------Main------------- */
 
-/* ---------- Main / Card Styling ------------- */
 
 .card-container {
     display: flex;
@@ -70,7 +69,7 @@ header .side-left img{
 .card-container nav {
     background-color: #0b1e33; /* Um azul levemente mais claro que o body */
     height: auto; /* Deixa o conteúdo ditar a altura */
-    width: 380px;
+    width: 500px;
     padding: 40px 30px;
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1); /* Borda sutil para dar profundidade */
@@ -98,7 +97,7 @@ header .side-left img{
     gap: 8px;
 }
 
-.E-mail, .senha {
+.E-mail, .senha, .nome {
     font-size: 14px;
     font-weight: 300;
     color: #cbd5e1;

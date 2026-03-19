@@ -1,56 +1,56 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     background-color: #021124;
 }
 
 /* ------------------------------------------ Header -------------------------------------------------------------------------------------- */
 
-header{
+header {
     display: grid;
     grid-template-columns: 90% 0px;
     padding: 2%;
 }
 
-.side-left{
+.side-left {
     display: grid;
     grid-template-columns: auto 1fr;
-    align-items: center; 
-    gap: 10px; 
+    align-items: center;
+    gap: 10px;
     font-family: "Readex Pro", sans-serif;
     color: white;
 }
 
 
-header .side-left img{
+header .side-left img {
     width: 90px;
     height: 50px;
 }
 
-.side-right{
+.side-right {
     display: grid;
-    align-items: center; 
+    align-items: center;
     grid-template-columns: auto 1fr;
-    gap: 20px; 
+    gap: 20px;
 }
 
-.side-right a{
+.side-right a {
     font-family: "Readex Pro", sans-serif;
     color: white;
     font-size: 15px;
     text-decoration: none;
 }
 
-.side-right a:hover{
+.side-right a:hover {
     transform: scale(1.2);
     transition: ease .05s;
 }
 
-.nav-celular{
+.nav-celular {
     display: none;
 }
 
@@ -66,7 +66,8 @@ header .side-left img{
 }
 
 .terms-card {
-    background-color: #0b1e33; /* Azul profundo para o card */
+    background-color: #0b1e33;
+    /* Azul profundo para o card */
     width: 100%;
     max-width: 650px;
     padding: 40px;
@@ -105,7 +106,8 @@ header .side-left img{
 
 .terms-content h3 {
     font-family: "Outfit", sans-serif;
-    color: #00d4ff; /* Azul destaque */
+    color: #00d4ff;
+    /* Azul destaque */
     font-size: 16px;
     margin-bottom: 10px;
 }
@@ -119,11 +121,19 @@ header .side-left img{
 }
 
 /* Personalização da barra de rolagem */
-.terms-content::-webkit-scrollbar { width: 6px; }
-.terms-content::-webkit-scrollbar-track { background: transparent; }
-.terms-content::-webkit-scrollbar-thumb { background: #2d4464; border-radius: 10px; }
+.terms-content::-webkit-scrollbar {
+    width: 6px;
+}
 
-/* Checkbox e Botões */
+.terms-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.terms-content::-webkit-scrollbar-thumb {
+    background: #2d4464;
+    border-radius: 10px;
+}
+
 .checkbox-wrapper {
     display: flex;
     align-items: center;
@@ -136,14 +146,13 @@ header .side-left img{
 
 .action-buttons {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     margin-top: 10px;
 }
 
-/* Remova ou ignore a estilização do .checkbox-wrapper já que ele não existe mais */
 
 .btn-primary {
-    background-color: #10b981; /* O verde agora fica ativo por padrão */
+    background-color: #10b981;
     color: #021124;
     padding: 12px 25px;
     border-radius: 8px;
@@ -154,11 +163,12 @@ header .side-left img{
     transition: 0.3s ease;
 }
 
-/* Você pode apagar a regra .btn-primary:disabled se quiser limpar o código */
+
 .btn-primary:hover {
     background-color: #34d399;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3); /* Adicionei um brilho no hover */
+    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
+    /* Adicionei um brilho no hover */
 }
 
 .btn-secondary {
