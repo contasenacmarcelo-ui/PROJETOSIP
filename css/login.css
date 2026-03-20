@@ -274,7 +274,7 @@ input:focus {
     margin-top: 5px;
     display: block;
     animation: aparecer 0.3s ease;
-1
+
 
 @keyframes aparecer {
     from {
