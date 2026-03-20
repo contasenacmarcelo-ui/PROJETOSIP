@@ -172,3 +172,18 @@ if (termosContainer) {
         }
     });
 }
+// ================= MOSTRAR / OCULTAR SENHA =================
+const toggleSenha = document.querySelector("#toggleSenha");
+const campoSenha = document.querySelector(".input-senha");
+
+toggleSenha.addEventListener("click", () => {
+    if (campoSenha.type === "password") {
+        campoSenha.type = "text";
+        toggleSenha.classList.remove("bi-eye");
+        toggleSenha.classList.add("bi-eye-slash");
+    } else {
+        campoSenha.type = "password";
+        toggleSenha.classList.remove("bi-eye-slash");
+        toggleSenha.classList.add("bi-eye");
+    }
+});

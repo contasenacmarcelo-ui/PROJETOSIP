@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-   
 }
 
 body{
@@ -211,4 +210,26 @@ div{
 }
 .termos-container {
     cursor: pointer;
+}
+.senha-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.senha-box input {
+    width: 100%;
+    padding-right: 40px;
+}
+
+#toggleSenha {
+    position: absolute;
+    right: 12px;
+    color: #94a3b8;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#toggleSenha:hover {
+    color: #00d4ff;
 }

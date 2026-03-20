@@ -13,7 +13,7 @@ const erroSenha = document.querySelector(".erro-senha");
 const toggle = document.getElementById("toggleSenha");
 
 
-// 👁️ MOSTRAR / OCULTAR SENHA
+//  MOSTRAR / OCULTAR SENHA
 toggle.addEventListener("click", () => {
 
     if (senhaInput.type === "password") {
