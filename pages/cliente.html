@@ -30,9 +30,19 @@
             <span>Sistema Integrado de Portfolio</span>
         </section>
         <section class="side-right">
-            <a href="#" id="btn-notifications" title="Notificações"><i class="bi bi-bell-fill"></i></a>
-            <a href="#" id="btn-profile" title="Perfil"><i class="bi bi-person-fill"></i></a>
+            <a href="#" id="btn-profile" title="Perfil">
+                <i class="bi bi-person-fill"></i>
+            </a>
         </section>
+        <div id="menu" class="menu hidden">
+            <div class="menu-header">
+                <p>Bem-vindo, <p id="menu-name"><b></b></p></p>
+                <i id="close-menu" class="bi bi-x-lg"></i>
+            </div>
+            <hr>
+            <span>Nome: <p id="perfil-name"></p></span>
+            <span>Email: <p id="perfil-name"></p></span>
+        </div>
         <div class="nav-celular">
             <div class="hamburger" id="btn-menu">
                 <span></span>
@@ -79,9 +89,10 @@
         </nav>
 
     </main>
-    
-    
+    <!-- Modal de perfil (telinha preta) -->
+
     <script src="../js/cliente.js"></script>
     <script src="../js/menu.js"></script>
 </body>
+
 </html>

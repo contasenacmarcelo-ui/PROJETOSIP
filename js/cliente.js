@@ -7,7 +7,6 @@
     const emailEl = document.getElementById('profileEmail');
 
     function abrirModal() {
-        // tentar obter usuário logado
         let user = null;
         try {
             user = JSON.parse(localStorage.getItem('loggedInUser'));
@@ -15,7 +14,6 @@
             console.error('Erro lendo loggedInUser:', e);
         }
 
-        // se não houver loggedInUser, tentar pegar primeiro usuário salvo (fallback)
         if (!user) {
             try {
                 const users = JSON.parse(localStorage.getItem('users') || '[]');
@@ -58,10 +56,33 @@
         });
     }
 
-    // fechar ao clicar fora do conteúdo
     if (modal) {
         modal.addEventListener('click', function (e) {
             if (e.target === modal) fecharModal();
         });
     }
 })();
+
+const btn = document.getElementById("btn-profile");
+const menu = document.getElementById("menu");
+
+btn.addEventListener("click", (e) => {
+    e.stopPropagation(); // evita conflito
+    menu.classList.toggle("hidden");
+});
+
+// fechar clicando fora
+document.addEventListener("click", () => {
+    menu.classList.add("hidden");
+});
+
+// impedir que clique dentro feche
+menu.addEventListener("click", (e) => {
+    e.stopPropagation();
+});
+
+const closeBtn = document.getElementById("close-menu");
+
+closeBtn.addEventListener("click", () => {
+    menu.classList.add("hidden");
+});
