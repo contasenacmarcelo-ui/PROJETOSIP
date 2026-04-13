@@ -1,6 +1,7 @@
 // ================= SELEÇÃO DE ELEMENTOS =================
 const btn = document.querySelector(".btn-Entrar");
 
+const inputNome = document.querySelector(".Nome");
 const inputEmail = document.querySelector(".input-E-mail");
 const inputSenha = document.querySelector(".input-senha");
 const inputConfirmar = document.querySelector(".input-confirmar");
@@ -74,7 +75,34 @@ btn.addEventListener("click", function (event) {
 
     // ================= REDIRECIONAMENTO =================
     if (valido) {
-        window.location.href = "login.html";
+        // salvar usuário no localStorage
+        try {
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+
+            const emailLower = inputEmail.value.trim().toLowerCase();
+            // checar se já existe
+            if (users.some(u => u.email === emailLower)) {
+                erroEmail.textContent = 'E-mail já cadastrado';
+                inputEmail.style.borderColor = '#ef4444';
+                return;
+            }
+
+            const novo = {
+                name: inputNome ? inputNome.value.trim() : '',
+                email: emailLower,
+                // NÃO é seguro para produção: apenas obfuscação básica
+                password: btoa(inputSenha.value)
+            };
+
+            users.push(novo);
+            localStorage.setItem('users', JSON.stringify(users));
+
+            // redirecionar para login
+            window.location.href = 'login.html';
+        } catch (e) {
+            console.error('Erro ao salvar usuário:', e);
+            window.location.href = 'login.html';
+        }
     }
 });
 

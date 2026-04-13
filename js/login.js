@@ -13,20 +13,20 @@ const erroSenha = document.querySelector(".erro-senha");
 const toggle = document.getElementById("toggleSenha");
 
 
-//  MOSTRAR / OCULTAR SENHA
-toggle.addEventListener("click", () => {
-
-    if (senhaInput.type === "password") {
-        senhaInput.type = "text";
-        toggle.classList.remove("bi-eye");
-        toggle.classList.add("bi-eye-slash");
-    } else {
-        senhaInput.type = "password";
-        toggle.classList.remove("bi-eye-slash");
-        toggle.classList.add("bi-eye");
-    }
-
-});
+//  MOSTRAR / OCULTAR SENHA (proteção caso o elemento não exista)
+if (toggle) {
+    toggle.addEventListener("click", () => {
+        if (senhaInput.type === "password") {
+            senhaInput.type = "text";
+            toggle.classList.remove("bi-eye");
+            toggle.classList.add("bi-eye-slash");
+        } else {
+            senhaInput.type = "password";
+            toggle.classList.remove("bi-eye-slash");
+            toggle.classList.add("bi-eye");
+        }
+    });
+}
 
 
 // 👂 ESCUTAR SENHA ENQUANTO DIGITA
@@ -82,9 +82,32 @@ botao.addEventListener("click", function (event) {
         valido = false;
     }
 
-    // SE TUDO OK
+    // SE TUDO OK -> validar credenciais contra localStorage
     if (valido) {
-        window.location.href = "cliente.html";
+        try {
+            const users = JSON.parse(localStorage.getItem('users') || '[]');
+            const emailLower = emailInput.value.trim().toLowerCase();
+
+            const usuario = users.find(u => u.email === emailLower);
+            if (!usuario) {
+                erroEmail.textContent = 'E-mail não cadastrado';
+                emailInput.style.border = '1px solid #ef4444';
+                return;
+            }
+
+            if (usuario.password !== btoa(senhaInput.value)) {
+                erroSenha.textContent = 'Senha incorreta';
+                senhaInput.style.border = '1px solid #ef4444';
+                return;
+            }
+
+            // sucesso: marcar usuário como logado e redirecionar
+            localStorage.setItem('loggedInUser', JSON.stringify({ email: usuario.email, name: usuario.name }));
+            window.location.href = 'cliente.html';
+        } catch (e) {
+            console.error('Erro ao verificar credenciais:', e);
+            window.location.href = 'cliente.html';
+        }
     }
 
 });
