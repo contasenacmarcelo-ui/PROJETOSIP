@@ -3,10 +3,12 @@ const btn = document.querySelector(".btn-Entrar");
 
 const inputNome = document.querySelector(".Nome");
 const inputEmail = document.querySelector(".input-E-mail");
+const inputTelefone = document.querySelector(".input-telefone");
 const inputSenha = document.querySelector(".input-senha");
 const inputConfirmar = document.querySelector(".input-confirmar");
 
 const erroEmail = document.querySelector(".erro-email");
+const erroTelefone = document.querySelector(".erro-telefone");
 const erroSenha = document.querySelector(".erro-senha");
 const erroConfirmar = document.querySelector(".erro-confirmar");
 const forcaSenha = document.querySelector(".forca-senha");
@@ -37,6 +39,14 @@ btn.addEventListener("click", function (event) {
     } else if (!regexEmail.test(inputEmail.value)) {
         erroEmail.textContent = "E-mail inválido";
         inputEmail.style.borderColor = "#ef4444";
+        valido = false;
+    }
+
+    // ================= TELEFONE =================
+    const telefoneLimpo = inputTelefone ? inputTelefone.value.replace(/\D/g, '') : '';
+    if (inputTelefone && telefoneLimpo.length < 10) {
+        erroTelefone.textContent = "Telefone inválido (mín. 10 dígitos)";
+        inputTelefone.style.borderColor = "#ef4444";
         valido = false;
     }
 
@@ -90,6 +100,7 @@ btn.addEventListener("click", function (event) {
             const novo = {
                 name: inputNome ? inputNome.value.trim() : '',
                 email: emailLower,
+                telefone: inputTelefone ? inputTelefone.value.trim() : '',
                 // NÃO é seguro para produção: apenas obfuscação básica
                 password: btoa(inputSenha.value)
             };
@@ -175,11 +186,13 @@ checkbox.addEventListener("change", function () {
 // ================= LIMPAR ERROS =================
 function limparErros() {
     erroEmail.textContent = "";
+    if (erroTelefone) erroTelefone.textContent = "";
     erroSenha.textContent = "";
     erroConfirmar.textContent = "";
     erroTermos.textContent = "";
 
     inputEmail.style.borderColor = "#2d4464";
+    if (inputTelefone) inputTelefone.style.borderColor = "#2d4464";
     inputSenha.style.borderColor = "#2d4464";
     inputConfirmar.style.borderColor = "#2d4464";
 

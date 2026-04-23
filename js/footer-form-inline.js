@@ -49,6 +49,7 @@ if (formContatoInline) {
 
         const nome = document.getElementById('nomeContatoInline').value.trim();
         const email = document.getElementById('emailContatoInline').value.trim();
+        const telefone = document.getElementById('telefoneContatoInline') ? document.getElementById('telefoneContatoInline').value.trim() : '';
         const mensagem = document.getElementById('mensagemContatoInline').value.trim();
 
         let temErro = false;
@@ -66,6 +67,13 @@ if (formContatoInline) {
             temErro = true;
         }
 
+        // Validar Telefone (se preenchido)
+        const telefoneLimpo = telefone.replace(/\D/g, '');
+        if (telefone && telefoneLimpo.length < 10) {
+            mostrarErroInline('erro-telefone-inline', 'Telefone inválido (mín. 10 dígitos)');
+            temErro = true;
+        }
+
         // Validar Mensagem
         if (mensagem.length < 10) {
             mostrarErroInline('erro-msg-inline', 'Mensagem deve ter no mínimo 10 caracteres');
@@ -79,6 +87,7 @@ if (formContatoInline) {
             id: Date.now(),
             nome: nome,
             email: email,
+            telefone: telefone || '',
             mensagem: mensagem,
             data: new Date().toLocaleString('pt-BR'),
             lida: false
