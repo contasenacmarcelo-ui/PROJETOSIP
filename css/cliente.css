@@ -51,6 +51,69 @@ header .side-left img {
     transition: ease .05s;
 }
 
+
+
+/* BOTÃO */
+#btn-profile {
+    font-size: 22px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* MENU */
+.menu {
+    position: absolute;
+    top: 100px;
+    right: 2%;
+    width: 200px;
+    color: white;
+    font-family: "Readex Pro", sans-serif;
+    background: #0b1f2e;
+    border-radius: 10px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#close-menu {
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+}
+
+#close-menu:hover {
+    transition: ease 0.5s;
+    color: red;
+}
+
+/* ESCONDIDO */
+.hidden {
+    display: none !important;
+}
+
+/* BOTÕES DO MENU */
+.menu button {
+    background: #122f44;
+    border: none;
+    padding: 10px;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+}
+
+.menu button:hover {
+    background: #1a4a6a;
+}
 /* ------------------------------------------ Menu mobile -------------------------------------------------------------------------------------- */
 
 .menu-mobile {

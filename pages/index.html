@@ -19,7 +19,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="../assets/images/Design sem nome.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
-    <title>SIP</title>
+    <title>SIP | Home</title>
 </head>
 
 <body>
@@ -40,7 +40,7 @@
             </div>
         </div>
         <nav class="menu-mobile" id="menu-mobile">
-            <a href="Login.html">Entrar</a>
+            <a href="login.html">Entrar</a>
             <a href="cadastro.html">Cadastrar</a>
         </nav>
     </header>
@@ -58,7 +58,59 @@
             <img src="../assets/images/mainimage.png" alt="">
         </figure>
     </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <!-- Logo & Descrição -->
+            <section class="footer-section footer-brand">
+                <div class="footer-logo">
+                    <img src="../assets/images/acronimo_sip_iluminado_em_azul.png" alt="Logo SIP">
+                </div>
+                <p class="footer-description">Sistema Integrado de Portfolio - Transformando ideias em soluções digitais profissionais e inovadoras.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+                </div>
+            </section>
+            <!-- Formulário de Contato -->
+            <section class="footer-section footer-form">
+                <h4 class="footer-title">Fale Conosco</h4>
+                <form id="formContatoFooterInline" class="form-contato-inline">
+                        <input type="text" placeholder="Seu Nome" id="nomeContatoInline" required>
+                        <span class="erro-form" id="erro-nome-inline"></span>
+    
+                        <input type="email" placeholder="Seu Email" id="emailContatoInline" required>
+                        <span class="erro-form" id="erro-email-inline"></span>
+
+                    <textarea placeholder="Sua Mensagem" id="mensagemContatoInline" rows="3" required></textarea>
+                    <span class="erro-form" id="erro-msg-inline"></span>
+
+                    <button type="submit" class="btn-submit-footer">Enviar</button>
+                </form>
+                <div class="sucesso-form" id="sucessoFormInline" style="display:none;">
+                    ✓ Mensagem enviada com sucesso!
+                </div>
+            </section>
+        </div>
+
+        <!-- Divider -->
+        <div class="footer-divider"></div>
+
+        <!-- Bottom Info -->
+        <div class="footer-bottom">
+            <p>&copy; 2024-2026 Sistema Integrado de Portfolio. Todos os direitos reservados.</p>
+            <p class="footer-made">Desenvolvido por Marcelo & Matheus</p>
+        </div>
+    </footer>
+
     <script src="../js/home.js"></script>
+    <script src="../js/footer-form-inline.js"></script>
+</body>
+
+</html>
 </body>
 
 </html>
