@@ -6,6 +6,9 @@
 
 body {
     background-color: #021124;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* ------------------------------------------ Header -------------------------------------------------------------------------------------- */
@@ -26,16 +29,14 @@ header {
     color: white;
 }
 
-
 header .side-left img {
     width: 90px;
     height: 50px;
 }
 
 .side-right {
-    display: grid;
+    display: flex;
     align-items: center;
-    grid-template-columns: auto 1fr;
     gap: 20px;
 }
 
@@ -51,7 +52,244 @@ header .side-left img {
     transition: ease .05s;
 }
 
+/* ========== NOTIFICAÇÕES ========== */
+.notificacao-wrapper {
+    position: relative;
+}
 
+.btn-icon {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    position: relative;
+    padding: 5px;
+    transition: color 0.3s;
+}
+
+.btn-icon:hover {
+    color: rgba(0, 156, 134, 1);
+}
+
+.notificacao-badge {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    background: linear-gradient(135deg, #ff4757, #ff6b81);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Sora", sans-serif;
+    animation: pulse-badge 2s infinite;
+}
+
+@keyframes pulse-badge {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+.notificacao-dropdown {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    width: 320px;
+    background: #0b1e33;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    overflow: hidden;
+    animation: slideDown 0.3s ease;
+}
+
+.notificacao-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.notificacao-header h4 {
+    color: white;
+    font-family: "Outfit", sans-serif;
+    font-size: 16px;
+    margin: 0;
+}
+
+.btn-link {
+    background: none;
+    border: none;
+    color: rgba(0, 156, 134, 1);
+    font-family: "Sora", sans-serif;
+    font-size: 11px;
+    cursor: pointer;
+    padding: 0;
+    box-shadow: none;
+}
+
+.btn-link:hover {
+    text-decoration: underline;
+    background: none;
+    box-shadow: none;
+    transform: none;
+}
+
+.notificacao-lista {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.notificacao-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.notificacao-item:hover {
+    background: rgba(0, 156, 134, 0.05);
+}
+
+.notificacao-item.lida {
+    opacity: 0.6;
+}
+
+.notificacao-item i {
+    font-size: 18px;
+    color: rgba(0, 156, 134, 1);
+    margin-top: 2px;
+}
+
+.notificacao-conteudo {
+    flex: 1;
+}
+
+.notificacao-titulo {
+    color: white;
+    font-family: "Sora", sans-serif;
+    font-size: 13px;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.notificacao-tempo {
+    color: rgba(255, 255, 255, 0.4);
+    font-family: "Sora", sans-serif;
+    font-size: 11px;
+    margin-top: 4px;
+    display: block;
+}
+
+.notificacao-vazia {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.4);
+    font-family: "Sora", sans-serif;
+    font-size: 13px;
+    padding: 30px;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== DASHBOARD ESTATÍSTICAS ========== */
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 0 5% 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.stat-card {
+    background: linear-gradient(145deg, #0b1e33, #0f2a47);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0, 156, 134, 0.15);
+    border-color: rgba(0, 156, 134, 0.3);
+}
+
+.stat-card i {
+    font-size: 32px;
+    color: rgba(0, 156, 134, 1);
+    background: rgba(0, 156, 134, 0.1);
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-numero {
+    color: white;
+    font-family: "Outfit", sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.stat-label {
+    color: rgba(255, 255, 255, 0.6);
+    font-family: "Sora", sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 4px;
+}
+
+@media (max-width: 1024px) {
+    .dashboard-stats {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 20px 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .dashboard-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .notificacao-dropdown {
+        width: 280px;
+        right: -60px;
+    }
+}
 
 /* BOTÃO */
 #btn-profile {
@@ -114,6 +352,7 @@ header .side-left img {
 .menu button:hover {
     background: #1a4a6a;
 }
+
 /* ------------------------------------------ Menu mobile -------------------------------------------------------------------------------------- */
 
 .menu-mobile {
@@ -198,10 +437,9 @@ header .side-left img {
 
 .title {
     color: white;
-    font-family: sans-serif;
+    font-family: "Outfit", sans-serif;
     font-size: 25px;
     font-weight: 700;
-
 }
 
 .section-title {
@@ -220,7 +458,7 @@ hr {
 
 .subtitle {
     color: white;
-    font-family: sans-serif;
+    font-family: "Sora", sans-serif;
     font-size: 20px;
     font-weight: 500;
     padding: 0px 0px 0px 40px;
@@ -228,7 +466,7 @@ hr {
 
 .txt1 {
     color: rgb(167, 161, 161);
-    font-family: sans-serif;
+    font-family: "Sora", sans-serif;
     font-size: 18px;
     font-weight: 400;
     padding: 0px 0px 0px 40px;
@@ -238,14 +476,11 @@ hr {
 .card-2,
 .card-3 {
     background-color: #0b1e33;
-    /* Um azul levemente mais claro que o body */
     height: 400px;
-    /* Deixa o conteúdo ditar a altura */
     width: 400px;
     padding: 40px 30px;
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    /* Borda sutil para dar profundidade */
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     display: flex;
     flex-direction: column;
@@ -258,33 +493,44 @@ hr {
     gap: 20px;
     justify-content: center;
     align-items: center;
-    
 }
+
 .container {
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
+
 .txt2{
     text-align: center;
 }
-.bi.bi-clipboard2-pulse-fill, .bi.bi-cash-coin, .bi.bi-headset {
+
+/* ÍCONES DOS CARDS - PADRONIZADOS E PROPORCIONAIS */
+.card-1 > i.bi,
+.card-2 > i.bi,
+.card-3 > i.bi {
     color: white;
-    font-size: 150px;
-    text-align: center;
+    font-size: 120px;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    flex-shrink: 0;
 }
+
 .title-2 {
     color: white;
-    font-family: sans-serif;
+    font-family: "Outfit", sans-serif;
     font-size: 22px;
     font-weight: 700;
     text-align: center;
 }
 
- .bi.bi-cash-coin{
-    padding: 0px;
- }
- button{
+/* BOTÕES ESPECÍFICOS DOS CARDS E MODAIS */
+.card-container button,
+.btn-cliente-enviar,
+.modal-cliente-close {
     padding: 10px 25px;
     color: #ffffff;
     background: transparent;
@@ -294,17 +540,24 @@ hr {
     font-size: 14px;
     cursor: pointer;
     font-weight: 700;
-    
     box-shadow: 0 0 10px rgba(0, 212, 255, 0.4);
-
     transition: all 0.3s ease;
 }
 
-button:hover {
+.card-container button:hover,
+.btn-cliente-enviar:hover {
     background: rgba(0, 212, 255, 0.1);
     box-shadow: 0 0 15px rgba(0, 212, 255, 0.4);
     transform: scale(1.1);
 }
+
+.modal-cliente-close {
+    padding: 0;
+    border: none;
+    background: none;
+    box-shadow: none;
+}
+
 @media (max-width: 1024px) {
 
     .card-container {
@@ -326,6 +579,7 @@ button:hover {
     }
 
 }
+
 @media (max-width: 768px) {
 
     header {
@@ -364,6 +618,7 @@ button:hover {
     }
 
 }
+
 @media (max-width: 480px) {
 
     header {
@@ -386,17 +641,19 @@ button:hover {
         font-size: 14px;
     }
 
-    .bi.bi-clipboard2-pulse-fill,
-    .bi.bi-cash-coin,
-    .bi.bi-headset {
-        font-size: 100px;
+    .card-1 > i.bi,
+    .card-2 > i.bi,
+    .card-3 > i.bi {
+        font-size: 80px;
+        height: 100px;
     }
 
-    button {
+    .card-container button {
         width: 100%;
     }
 
 }
+
 @media (min-width: 1400px) {
 
     .card-container {
@@ -444,14 +701,14 @@ button:hover {
 }
 
 .modal-cliente-content {
-    background: linear-gradient(135deg, #001a4d 0%, #021124 100%);
+    background: #0b1e33;
     padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 40px rgba(0, 156, 134, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
     max-width: 500px;
     width: 90%;
     position: relative;
-    border: 2px solid rgba(0, 156, 134, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     animation: slideUp 0.3s ease;
     font-family: "Sora", sans-serif;
     color: white;
@@ -495,7 +752,7 @@ button:hover {
 .form-cliente textarea,
 .form-cliente select {
     background: rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(0, 156, 134, 0.3);
+    border: 1px solid #2d4464;
     color: white;
     padding: 12px 15px;
     border-radius: 8px;
@@ -542,14 +799,14 @@ button:hover {
 }
 
 .btn-cliente-enviar {
-    background: linear-gradient(135deg, rgba(0, 156, 134, 1) 0%, rgba(0, 120, 100, 1) 100%);
+    background: linear-gradient(135deg, rgba(0, 156, 134, 1) 0%, rgb(0, 204, 177) 100%);
     color: white;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 8px;
     font-family: "Outfit", sans-serif;
     font-size: 16px;
     font-weight: 700;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
     cursor: pointer;
     transition: all 0.3s ease;
     margin-top: 10px;
@@ -579,6 +836,13 @@ button:hover {
     color: rgba(255, 255, 255, 0.7);
     font-size: 14px;
     padding: 20px;
+}
+
+.sem-pedidos i {
+    font-size: 48px;
+    color: rgba(0, 156, 134, 0.3);
+    margin-bottom: 15px;
+    display: block;
 }
 
 .pedido-item {

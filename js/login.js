@@ -78,7 +78,7 @@ botao.addEventListener("click", function (event) {
 
     } else if (senhaInput.value.length < 6) {
         erroSenha.textContent = "A senha deve ter pelo menos 6 caracteres";
-        senhaInput.style.border = " color: 1px solid #ef4444";
+        senhaInput.style.border = "1px solid #ef4444";
         valido = false;
     }
 

@@ -6,6 +6,9 @@
 
 body {
     background-color: #021124;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* ------------------------------------------ Header -------------------------------------------------------------------------------------- */
@@ -131,7 +134,7 @@ main {
     display: grid;
     align-items: center;
     padding: 2%;
-
+    flex: 1;
     color: white;
 }
 
@@ -160,11 +163,11 @@ main {
 .card {
     background: linear-gradient(145deg, #0b1e33, #0f2a47);
     border-radius: 15px;
-    padding: 10px;
+    padding: 15px;
     display: flex;
     justify-content: center;
-    padding: 15px 15px 15px 15px;
-    width: 600px;
+    width: 100%;
+    max-width: 100%;
     height: 350px;
     cursor: pointer;
     transition: 0.3s;
@@ -195,7 +198,7 @@ main {
     box-shadow: 0 15px 35px rgba(0, 212, 255, 0.2);
 }
 
-/* BOTÃO */
+/* BOTÃO - PADRONIZADO */
 .orcamento-container {
     display: flex;
     justify-content: center;
@@ -203,24 +206,26 @@ main {
 }
 
 .btn-orcamento {
-    background: linear-gradient(90deg, #00d4ff, #00ffa3);
-    color: #021124;
-    font-weight: bold;
+    background: linear-gradient(135deg, rgba(0, 156, 134, 1) 0%, rgb(0, 204, 177) 100%);
+    color: white;
+    font-family: "Outfit", sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
     border: none;
     padding: 15px 30px;
     border-radius: 12px;
-    font-family: "Sora", sans-serif;
     cursor: pointer;
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
 
 /* HOVER BOTÃO */
 .btn-orcamento:hover {
+    background: linear-gradient(135deg, rgb(0, 204, 177) 0%, rgba(0, 156, 134, 1) 100%);
     transform: scale(1.05);
-    box-shadow: 0 0 20px #00d4ff;
+    box-shadow: 0 0 20px rgba(0, 156, 134, 0.5);
 }
 
-/* ================= MODAL ================= */
+/* ================= MODAL - PADRONIZADO ================= */
 .modal {
     position: fixed;
     top: 0;
@@ -241,31 +246,46 @@ main {
 .modal-content {
     background: #0b1e33;
     padding: 30px;
-    border-radius: 15px;
+    border-radius: 20px;
     width: 500px;
+    max-width: 90%;
     display: flex;
     flex-direction: column;
     gap: 10px;
     font-family: "Sora", sans-serif;
     border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 /* Título */
 .modal-title {
     color: white;
     text-align: center;
+    font-family: "Outfit", sans-serif;
+    font-size: 22px;
+    margin-bottom: 10px;
 }
 
 /* Inputs */
 .modal-input,
 .modal-textarea {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     border-radius: 8px;
     border: 1px solid #2d4464;
     background: #162a45;
     color: white;
     outline: none;
+    font-family: "Sora", sans-serif;
+    transition: all 0.3s;
+}
+
+.modal-input:focus,
+.modal-textarea:focus {
+    outline: none;
+    border-color: rgba(0, 156, 134, 1);
+    background-color: #1c3557;
+    box-shadow: 0 0 10px rgba(0, 156, 134, 0.2);
 }
 
 .modal-textarea {
@@ -295,37 +315,89 @@ main {
     display: block;
 }
 
-/* BOTÕES */
+/* BOTÕES - PADRONIZADO */
 .modal-buttons {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
+    gap: 10px;
 }
 
 .btn-enviar {
-    background: #10b981;
+    background: linear-gradient(135deg, rgba(0, 156, 134, 1) 0%, rgb(0, 204, 177) 100%);
+    color: white;
+    font-family: "Outfit", sans-serif;
+    font-weight: 700;
     border: none;
-    padding: 10px;
+    padding: 12px 20px;
     border-radius: 8px;
     cursor: pointer;
-    font-weight: bold;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.btn-enviar:hover {
+    background: linear-gradient(135deg, rgb(0, 204, 177) 0%, rgba(0, 156, 134, 1) 100%);
+    box-shadow: 0 5px 20px rgba(0, 156, 134, 0.4);
+    transform: translateY(-2px);
 }
 
 .btn-fechar {
-    background: #ef4444;
-    border: none;
-    padding: 10px;
+    background: transparent;
+    color: #f87171;
+    font-family: "Outfit", sans-serif;
+    font-weight: 700;
+    border: 1px solid #f87171;
+    padding: 12px 20px;
     border-radius: 8px;
     cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-fechar:hover {
+    background: #f87171;
+    color: white;
 }
 
 /* INPUT ERRO VISUAL */
 .input-erro {
     border-color: #ef4444 !important;
 }
-/* ------------------------------------------ Media Querry -------------------------------------------------------------------------------- */
 
-@media (max-width: 1430px) {}
+/* LOADING STATE */
+.skeleton {
+    background: linear-gradient(90deg, #162a45 25%, #1c3557 50%, #162a45 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+    border-radius: 8px;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* ESTADO VAZIO */
+.estado-vazio {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-family: "Sora", sans-serif;
+    font-size: 14px;
+    padding: 40px;
+}
+
+.estado-vazio i {
+    font-size: 48px;
+    color: rgba(0, 156, 134, 0.3);
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* ------------------------------------------ Media Querry -------------------------------------------------------------------------------- */
 
 @media (max-width: 1200px) {
     .side-right {
@@ -346,20 +418,13 @@ main {
     }
 }
 
-@media (max-width: 1110px) {
-
-}
-
-@media (max-width: 1020px) {
-
-}
-
-@media (max-width: 860px) {
-
-}
-
 @media (max-width: 768px) {
     .squares-booking {
         grid-template-columns: 1fr;
+    }
+    
+    .modal-content {
+        width: 95%;
+        padding: 20px;
     }
 }

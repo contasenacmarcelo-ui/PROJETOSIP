@@ -4,8 +4,15 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: #021124;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* ------------------------------------------ Header -------------------------------------------------------------------------------------- */
@@ -131,14 +138,16 @@ main {
     display: grid;
     align-items: center;
     padding: 5%;
-    grid-template-columns: 50% 0px;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
     color: white;
+    flex: 1;
 }
 
 main h1 {
     font-family: "Outfit", sans-serif;
     font-size: 70px;
-    font-weight: 90px;
+    font-weight: 900;
     width: 600px;
     margin-bottom: 20px;
 }

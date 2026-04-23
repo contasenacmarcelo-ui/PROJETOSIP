@@ -7,6 +7,9 @@
 
 body{
     background-color: #021124;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* ------------------------------------------ Header -------------------------------------------------------------------------------------- */
@@ -55,7 +58,7 @@ header .side-left img {
 /* ------------------------------------------ Menu mobile -------------------------------------------------------------------------------------- */
 
 .menu-mobile {
-    position: fixed; /* melhor que absolute pra menu */
+    position: fixed;
     top: 80px;
     right: 0;
     z-index: 9999;
@@ -135,17 +138,18 @@ header .side-left img {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 80vh; /* Garante que o card fique centralizado verticalmente */
+    flex: 1;
+    padding: 2%;
 }
 
 /* O container principal do formulário */
-.card-container nav {
-    background-color: #0b1e33; /* Um azul levemente mais claro que o body */
-    height: auto; /* Deixa o conteúdo ditar a altura */
+.card-container .card-box {
+    background-color: #0b1e33;
+    height: auto;
     width: 380px;
     padding: 40px 30px;
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Borda sutil para dar profundidade */
+    border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     display: flex;
     flex-direction: column;
@@ -178,8 +182,8 @@ header .side-left img {
 }
 
 input {
-    width: 100%;/* Ajusta ao container */
-    height: 45px ;
+    width: 100%;
+    height: 45px;
     background-color: #162a45;
     border: 1px solid #2d4464;
     border-radius: 8px;
@@ -191,16 +195,17 @@ input {
 
 input:focus {
     outline: none;
-    border-color: #00d4ff; 
+    border-color: rgba(0, 156, 134, 1);
     background-color: #1c3557;
+    box-shadow: 0 0 10px rgba(0, 156, 134, 0.2);
 }
 
-/* Botão Entrar */
+/* Botão Entrar - PADRONIZADO: verde-água do site */
 .btn-Entrar {
-    background-color: #10b981;
-    color: #021124;
+    background: linear-gradient(135deg, rgba(0, 156, 134, 1) 0%, rgb(0, 204, 177) 100%);
+    color: white;
+    font-family: "Outfit", sans-serif;
     font-weight: 700;
-    
     letter-spacing: 1px;
     width: 100%;
     height: 45px;
@@ -208,12 +213,13 @@ input:focus {
     border: none;
     cursor: pointer;
     margin-top: 10px;
-    transition: transform 0.2s, background 0.3s;
+    transition: all 0.3s ease;
 }
 
 .btn-Entrar:hover {
-    background-color: #34d399;
+    background: linear-gradient(135deg, rgb(0, 204, 177) 0%, rgba(0, 156, 134, 1) 100%);
     transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 156, 134, 0.4);
 }
 
 /* Links e Textos de suporte */
@@ -229,14 +235,14 @@ input:focus {
 }
 
 .txt1:hover {
-    color: #00d4ff;
-
+    color: rgba(0, 156, 134, 1);
 }
 
 .Cadastre-se-txt {
-    color: #00d4ff;
+    color: rgba(0, 156, 134, 1);
     text-decoration: none;
     font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 .Cadastre-se-txt:hover {
@@ -264,17 +270,17 @@ input:focus {
 }
 
 #toggleSenha:hover {
-    color: #00d4ff;
+    color: rgba(0, 156, 134, 1);
 }
 .erro-email,
 .erro-senha {
-    color: #ef4444 !important; /* 🔥 força vermelho */
+    color: #ef4444 !important;
     font-size: 12px;
     font-family: "Sora", sans-serif;
     margin-top: 5px;
     display: block;
     animation: aparecer 0.3s ease;
-
+}
 
 @keyframes aparecer {
     from {
@@ -286,6 +292,38 @@ input:focus {
         transform: translateY(0);
     }
 }
+
+/* LOADING STATE */
+.skeleton {
+    background: linear-gradient(90deg, #162a45 25%, #1c3557 50%, #162a45 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+    border-radius: 8px;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* ESTADO VAZIO */
+.estado-vazio {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-family: "Sora", sans-serif;
+    font-size: 14px;
+    padding: 40px;
+}
+
+.estado-vazio i {
+    font-size: 48px;
+    color: rgba(0, 156, 134, 0.3);
+    margin-bottom: 15px;
+    display: block;
 }
 
 @media (max-width: 1200px) {

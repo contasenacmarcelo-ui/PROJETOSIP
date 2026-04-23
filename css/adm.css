@@ -6,6 +6,9 @@
 
 body {
     background-color: #021124;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* ------------------------------------------ Header -------------------------------------------------------------------------------------- */
@@ -131,6 +134,7 @@ header .side-left img {
     width: 100%;
     padding: 2%;
     overflow-x: auto;
+    flex: 1;
 }
 
 table {
@@ -198,26 +202,52 @@ tr:hover {
     transform: scale(1.05);
 }
 
-/* ------------------------------------------ Paginação -------------------------------------------------------------------------------------- */
+/* ------------------------------------------ Paginação - PADRONIZADO -------------------------------------------------------------------------------------- */
 
 .pagination{
     display: flex;
     justify-content: center;
     gap: 10px;
     margin-top: 10px;
+    padding-bottom: 20px;
 }
 
 .pagination button{
-    padding: 8px 12px;
+    padding: 8px 14px;
     border: none;
     background-color: #0b1e33;
     color: white;
-    border-radius: 6px;
+    border-radius: 8px;
     cursor: pointer;
+    font-family: "Sora", sans-serif;
+    transition: all 0.3s ease;
+}
+
+.pagination button:hover{
+    background-color: rgba(0, 156, 134, 0.3);
 }
 
 .pagination button.ativo{
-    background-color: #2563eb;
+    background: linear-gradient(135deg, rgba(0, 156, 134, 1) 0%, rgb(0, 204, 177) 100%);
+    color: white;
+    font-weight: 700;
+    box-shadow: 0 0 10px rgba(0, 156, 134, 0.3);
+}
+
+/* ------------------------------------------ ESTADO VAZIO ------------------------------------------ */
+.estado-vazio {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-family: "Sora", sans-serif;
+    font-size: 14px;
+    padding: 40px;
+}
+
+.estado-vazio i {
+    font-size: 48px;
+    color: rgba(0, 156, 134, 0.3);
+    margin-bottom: 15px;
+    display: block;
 }
 
 /* ------------------------------------------ Media -------------------------------------------------------------------------------------- */

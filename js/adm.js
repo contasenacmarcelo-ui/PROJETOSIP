@@ -1,21 +1,23 @@
+document.addEventListener('DOMContentLoaded', function () {
         const rows = document.querySelectorAll("tbody tr");
         const btn = document.getElementById("btn-menu");
         const menu = document.getElementById("menu-mobile");
 
-        btn.addEventListener("click", () => {
-            btn.classList.toggle("ativo");
-            menu.classList.toggle("ativo");
-        });
+        if (btn && menu) {
+            btn.addEventListener("click", () => {
+                btn.classList.toggle("ativo");
+                menu.classList.toggle("ativo");
+            });
 
-        document.addEventListener("click", (e) => {
-            if (!menu.contains(e.target) && !btn.contains(e.target)) {
-                menu.classList.remove("ativo");
-                btn.classList.remove("ativo");
-            }
-        });
+            document.addEventListener("click", (e) => {
+                if (!menu.contains(e.target) && !btn.contains(e.target)) {
+                    menu.classList.remove("ativo");
+                    btn.classList.remove("ativo");
+                }
+            });
+        }
 
         // PAGINAÇÃO
-
         const pagination = document.getElementById("pagination");
         const rowsPerPage = 9;
         let currentPage = 1;
@@ -50,7 +52,6 @@
             }
         }
 
-        // 🔥 AGORA FORA
         function updateButtons() {
             const buttons = pagination.querySelectorAll("button");
 
@@ -59,5 +60,8 @@
             });
         }
 
-        createButtons();
-        showPage(1);
+        if (pagination && rows.length > 0) {
+            createButtons();
+            showPage(1);
+        }
+});

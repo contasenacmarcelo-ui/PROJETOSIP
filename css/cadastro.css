@@ -6,6 +6,9 @@
 
 body{
     background-color: #021124;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Header */
@@ -120,10 +123,11 @@ header .side-left img {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 80vh;
+    flex: 1;
+    padding: 2%;
 }
 
-.card-container nav {
+.card-container .card-box {
     background-color: #0b1e33;
     height: auto;
     width: 500px;
@@ -174,8 +178,9 @@ input {
 
 input:focus {
     outline: none;
-    border-color: #00d4ff;
+    border-color: rgba(0, 156, 134, 1);
     background-color: #1c3557;
+    box-shadow: 0 0 10px rgba(0, 156, 134, 0.2);
 }
 
 /* Senha com icone de olho */
@@ -201,14 +206,14 @@ input:focus {
 }
 
 .senha-box i:hover {
-    color: #00d4ff;
+    color: rgba(0, 156, 134, 1);
 }
 
-/* Botao */
+/* Botao - PADRONIZADO: verde-água do site */
 .btn-Entrar {
-    font-family: "Sora", sans-serif;
-    background-color: #10b981;
-    color: #021124;
+    font-family: "Outfit", sans-serif;
+    background: linear-gradient(135deg, rgba(0, 156, 134, 1) 0%, rgb(0, 204, 177) 100%);
+    color: white;
     font-weight: 700;
     letter-spacing: 1px;
     width: 100%;
@@ -217,12 +222,13 @@ input:focus {
     border: none;
     cursor: pointer;
     margin-top: 10px;
-    transition: transform 0.2s, background 0.3s;
+    transition: all 0.3s ease;
 }
 
 .btn-Entrar:hover {
-    background-color: #34d399;
+    background: linear-gradient(135deg, rgb(0, 204, 177) 0%, rgba(0, 156, 134, 1) 100%);
     transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 156, 134, 0.4);
 }
 
 .txt1, .txt2 {
@@ -237,13 +243,14 @@ input:focus {
 }
 
 .txt1:hover {
-    color: #00d4ff;
+    color: rgba(0, 156, 134, 1);
 }
 
 .Cadastre-se-txt {
-    color: #00d4ff;
+    color: rgba(0, 156, 134, 1);
     text-decoration: none;
     font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 .Cadastre-se-txt:hover {
@@ -268,6 +275,11 @@ input:focus {
 
 .checkboxA {
     color: rgb(143, 143, 143);
+    transition: color 0.3s;
+}
+
+.checkboxA:hover {
+    color: rgba(0, 156, 134, 1);
 }
 
 .erro-email, .erro-senha, .erro-confirmar, .erro-telefone {
@@ -291,6 +303,39 @@ input:focus {
     outline: 1px solid #ef4444;
     border-radius: 6px;
     padding: 5px;
+}
+
+/* LOADING STATE */
+.skeleton {
+    background: linear-gradient(90deg, #162a45 25%, #1c3557 50%, #162a45 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+    border-radius: 8px;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* ESTADO VAZIO */
+.estado-vazio {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-family: "Sora", sans-serif;
+    font-size: 14px;
+    padding: 40px;
+}
+
+.estado-vazio i {
+    font-size: 48px;
+    color: rgba(0, 156, 134, 0.3);
+    margin-bottom: 15px;
+    display: block;
 }
 
 @media (max-width: 1200px) {

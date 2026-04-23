@@ -6,6 +6,9 @@
 
 body {
     background-color: #021124;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* ------------------------------------------ Header -------------------------------------------------------------------------------------- */
@@ -135,15 +138,15 @@ header .side-left img {
     align-items: center;
     min-height: 80vh;
     padding: 20px;
+    flex: 1;
 }
 
 .terms-card {
     background-color: #0b1e33;
-    /* Azul profundo para o card */
     width: 100%;
     max-width: 650px;
     padding: 40px;
-    border-radius: 15px;
+    border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
     display: flex;
@@ -178,8 +181,7 @@ header .side-left img {
 
 .terms-content h3 {
     font-family: "Outfit", sans-serif;
-    color: #00d4ff;
-    /* Azul destaque */
+    color: rgba(0, 156, 134, 1);
     font-size: 16px;
     margin-bottom: 10px;
 }
@@ -222,25 +224,24 @@ header .side-left img {
     margin-top: 10px;
 }
 
-
+/* BOTÃO - PADRONIZADO */
 .btn-primary {
-    background-color: #10b981;
-    color: #021124;
+    background: linear-gradient(135deg, rgba(0, 156, 134, 1) 0%, rgb(0, 204, 177) 100%);
+    color: white;
+    font-family: "Outfit", sans-serif;
+    font-weight: 700;
+    letter-spacing: 1px;
     padding: 12px 25px;
     border-radius: 8px;
     border: none;
-    font-weight: 700;
     cursor: pointer;
-    font-family: "Sora", sans-serif;
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-
 .btn-primary:hover {
-    background-color: #34d399;
+    background: linear-gradient(135deg, rgb(0, 204, 177) 0%, rgba(0, 156, 134, 1) 100%);
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);
-    /* Adicionei um brilho no hover */
+    box-shadow: 0 5px 20px rgba(0, 156, 134, 0.4);
 }
 
 .btn-secondary {
