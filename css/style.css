@@ -441,6 +441,20 @@ button {
     .footer-made {
         text-align: center;
     }
+
+    .footer-form {
+        padding: 15px;
+    }
+
+    .form-contato-inline input,
+    .form-contato-inline textarea {
+        font-size: 14px;
+    }
+
+    .btn-submit-footer {
+        font-size: 13px;
+        padding: 9px 16px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -466,6 +480,126 @@ button {
 
     .footer-logo h3 {
         font-size: 20px;
+    }
+
+    .footer-form {
+        padding: 12px;
+    }
+
+    .form-contato-inline input,
+    .form-contato-inline textarea {
+        padding: 9px 10px;
+        font-size: 14px;
+    }
+
+    .btn-submit-footer {
+        padding: 9px 14px;
+        font-size: 12px;
+    }
+}
+
+/* Formulário de Contato Inline */
+.footer-form {
+    background: rgba(0, 156, 134, 0.05);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 156, 134, 0.15);
+}
+
+.form-contato-inline {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-contato-inline input,
+.form-contato-inline textarea {
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(0, 156, 134, 0.25);
+    color: white;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-family: "Sora", sans-serif;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.form-contato-inline input::placeholder,
+.form-contato-inline textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.form-contato-inline input:focus,
+.form-contato-inline textarea:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(0, 156, 134, 1);
+    box-shadow: 0 0 12px rgba(0, 156, 134, 0.3);
+}
+
+.form-contato-inline textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.btn-submit-footer {
+    background: linear-gradient(135deg, rgba(0, 156, 134, 1) 0%, rgba(0, 120, 100, 1) 100%);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-family: "Outfit", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 4px;
+    width: 100%;
+}
+
+.btn-submit-footer:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 156, 134, 0.4);
+}
+
+.btn-submit-footer:active {
+    transform: translateY(0);
+}
+
+.erro-form {
+    color: #ff4757;
+    font-size: 12px;
+    font-family: "Sora", sans-serif;
+    display: none;
+    margin-top: -8px;
+}
+
+.erro-form.show {
+    display: block;
+}
+
+.sucesso-form {
+    background: rgba(46, 204, 113, 0.2);
+    border: 2px solid #2ecc71;
+    color: #2ecc71;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    font-family: "Sora", sans-serif;
+    font-size: 14px;
+    margin-top: 10px;
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
     }
 }
 
