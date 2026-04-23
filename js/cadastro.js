@@ -213,7 +213,7 @@ if (termosContainer) {
         }
     });
 }
-// ================= MOSTRAR / OCULTAR SENHA =================
+
 const toggleSenha = document.querySelector("#toggleSenha");
 const campoSenha = document.querySelector(".input-senha");
 
@@ -228,3 +228,21 @@ toggleSenha.addEventListener("click", () => {
         toggleSenha.classList.add("bi-eye");
     }
 });
+
+// ================= MOSTRAR / OCULTAR CONFIRMAR SENHA =================
+const toggleConfirmar = document.querySelector("#toggleConfirmar");
+const campoConfirmar = document.querySelector(".input-confirmar");
+
+if (toggleConfirmar && campoConfirmar) {
+    toggleConfirmar.addEventListener("click", () => {
+        if (campoConfirmar.type === "password") {
+            campoConfirmar.type = "text";
+            toggleConfirmar.classList.remove("bi-eye");
+            toggleConfirmar.classList.add("bi-eye-slash");
+        } else {
+            campoConfirmar.type = "password";
+            toggleConfirmar.classList.remove("bi-eye-slash");
+            toggleConfirmar.classList.add("bi-eye");
+        }
+    });
+}

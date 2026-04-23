@@ -606,4 +606,12 @@ main p {
     }
 }
 
+.char-counter {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: right;
+    margin-top: -8px;
+    font-family: "Sora", sans-serif;
+}
+
 /* rgb(141, 245, 255); */

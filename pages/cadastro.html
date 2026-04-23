@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
     <html lang="pt-br">
 
     <head>
@@ -44,7 +44,6 @@
                 <span></span>
                 <span></span>
             </div>
-        </div>
         <nav class="menu-mobile" id="menu-mobile">
             <a href="Login.html">Entrar</a>
             <a href="cadastro.html">Cadastrar</a>
@@ -69,13 +68,19 @@
             </section>
             <section class="label-02">
                 <p class="senha">Senha</p>
-                <input class="input-senha" placeholder="Senha" type="password">
+                <div class="senha-box">
+                    <input class="input-senha" placeholder="Senha" type="password">
+                    <i class="bi bi-eye" id="toggleSenha"></i>
+                </div>
                 <span class="erro-senha"></span>
                 <span class="forca-senha"></span>
             </section>
             <section class="label-02">
                 <p class="senha">Confirmar Senha</p>
-                <input class="input-confirmar" placeholder="Confirmar senha" type="password">
+                <div class="senha-box">
+                    <input class="input-confirmar" placeholder="Confirmar senha" type="password">
+                    <i class="bi bi-eye" id="toggleConfirmar"></i>
+                </div>
                 <span class="erro-confirmar"></span>
             </section>
             <div class="termos-container">

@@ -1,5 +1,13 @@
-# TODO - Melhorias SIP
+# TODO - Melhorar Estilização do Footer Formulário Fale Conosco
 
-- [x] Sistema de Toast Notifications
-- [x] Máscara de Telefone nos formulários
+- [x] 1. Adicionar estilos base para `.footer-form` no `css/style.css`
+- [x] 2. Adicionar estilos para `.form-contato-inline` (layout, gap)
+- [x] 3. Estilizar inputs e textarea (fundo glass, borda, foco glow)
+- [x] 4. Estilizar `.btn-submit-footer` (gradiente, hover, sombra)
+- [x] 5. Estilizar `.erro-form` e `.sucesso-form` (cores, padding, fundo)
+- [x] 6. Garantir responsividade nas media queries existentes
+- [x] 7. Adicionar máscara de telefone (JS)
+- [x] 8. Adicionar Toast de sucesso (JS + CSS)
+- [x] 9. Adicionar contador de caracteres no textarea
+- [x] 10. Corrigir ícone de olho no campo "Confirmar Senha"
 

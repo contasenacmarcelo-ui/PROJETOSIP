@@ -80,16 +80,17 @@
             <section class="footer-section footer-form">
                 <h4 class="footer-title">Fale Conosco</h4>
                 <form id="formContatoFooterInline" class="form-contato-inline">
-                        <input type="text" placeholder="Seu Nome" id="nomeContatoInline" required>
-                        <span class="erro-form" id="erro-nome-inline"></span>
+                    <input type="text" placeholder="Seu Nome" id="nomeContatoInline" required>
+                    <span class="erro-form" id="erro-nome-inline"></span>
     
-                <input type="email" placeholder="Seu Email" id="emailContatoInline" required>
-                <span class="erro-form" id="erro-email-inline"></span>
+                    <input type="email" placeholder="Seu Email" id="emailContatoInline" required>
+                    <span class="erro-form" id="erro-email-inline"></span>
 
-                <input type="text" placeholder="Seu Telefone" id="telefoneContatoInline" class="mascara-telefone" maxlength="15">
-                <span class="erro-form" id="erro-telefone-inline"></span>
+                    <input type="text" placeholder="Seu Telefone" id="telefoneContatoInline" class="mascara-telefone" maxlength="15">
+                    <span class="erro-form" id="erro-telefone-inline"></span>
 
-            <textarea placeholder="Sua Mensagem" id="mensagemContatoInline" rows="3" required></textarea>
+                    <textarea placeholder="Sua Mensagem" id="mensagemContatoInline" rows="3" maxlength="200" required></textarea>
+                    <div class="char-counter" id="charCounter">0/200</div>
                     <span class="erro-form" id="erro-msg-inline"></span>
 
                     <button type="submit" class="btn-submit-footer">Enviar</button>

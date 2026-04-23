@@ -3,6 +3,25 @@
 
 const formContatoInline = document.getElementById('formContatoFooterInline');
 const sucessoFormInline = document.getElementById('sucessoFormInline');
+const textareaContato = document.getElementById('mensagemContatoInline');
+const charCounter = document.getElementById('charCounter');
+
+// Contador de caracteres
+if (textareaContato && charCounter) {
+    textareaContato.addEventListener('input', () => {
+        const atual = textareaContato.value.length;
+        const max = textareaContato.getAttribute('maxlength') || 200;
+        charCounter.textContent = `${atual}/${max}`;
+        
+        if (atual >= max * 0.9) {
+            charCounter.style.color = '#ff4757';
+        } else if (atual >= max * 0.7) {
+            charCounter.style.color = '#facc15';
+        } else {
+            charCounter.style.color = 'rgba(255, 255, 255, 0.5)';
+        }
+    });
+}
 
 // Abrir/fechar modal de histórico (se existir)
 function getContatos() {

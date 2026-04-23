@@ -8,8 +8,7 @@ body{
     background-color: #021124;
 }
 
-/* ------------------------------------------ Header -------------------------------------------------------------------------------------- */
-
+/* Header */
 header {
     display: grid;
     grid-template-columns: 1fr auto auto;
@@ -25,7 +24,6 @@ header {
     font-family: "Readex Pro", sans-serif;
     color: white;
 }
-
 
 header .side-left img {
     width: 90px;
@@ -51,8 +49,7 @@ header .side-left img {
     transition: ease .05s;
 }
 
-/* ------------------------------------------ Menu mobile -------------------------------------------------------------------------------------- */
-
+/* Menu mobile */
 .menu-mobile {
     position: absolute;
     top: 80px;
@@ -60,17 +57,14 @@ header .side-left img {
     background-color: #021124;
     width: 200px;
     height: 100%;
-
     display: flex;
     flex-direction: column;
     gap: 15px;
     padding: 20px;
     border-radius: 10px;
-
     opacity: 0;
     transform: translateY(-20px);
     pointer-events: none;
-
     transition: all 0.3s ease;
 }
 
@@ -84,10 +78,6 @@ header .side-left img {
     color: white;
     text-decoration: none;
     font-family: "Readex Pro", sans-serif;
-}
-
-.menu-mobile.ativo {
-    display: flex;
 }
 
 .hamburger {
@@ -125,24 +115,21 @@ header .side-left img {
     display: none;
 }
 
-/* ----------Main------------- */
-
-
+/* Main */
 .card-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 80vh; /* Garante que o card fique centralizado verticalmente */
+    min-height: 80vh;
 }
 
-/* O container principal do formulário */
 .card-container nav {
-    background-color: #0b1e33; /* Um azul levemente mais claro que o body */
-    height: auto; /* Deixa o conteúdo ditar a altura */
+    background-color: #0b1e33;
+    height: auto;
     width: 500px;
     padding: 40px 30px;
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Borda sutil para dar profundidade */
+    border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     display: flex;
     flex-direction: column;
@@ -159,7 +146,6 @@ header .side-left img {
     color: white;
 }
 
-/* Estilização dos grupos de input */
 .label-01, .label-02 {
     width: 100%;
     display: flex;
@@ -167,7 +153,7 @@ header .side-left img {
     gap: 8px;
 }
 
-.E-mail, .senha, .nome {
+.E-mail, .senha, .nome, .Telefone {
     font-size: 14px;
     font-weight: 300;
     color: #cbd5e1;
@@ -175,8 +161,8 @@ header .side-left img {
 }
 
 input {
-    width: 100%;/* Ajusta ao container */
-    height: 45px ;
+    width: 100%;
+    height: 45px;
     background-color: #162a45;
     border: 1px solid #2d4464;
     border-radius: 8px;
@@ -188,13 +174,39 @@ input {
 
 input:focus {
     outline: none;
-    border-color: #00d4ff; 
+    border-color: #00d4ff;
     background-color: #1c3557;
 }
 
-/* Botão Entrar */
+/* Senha com icone de olho */
+.senha-box {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.senha-box input {
+    width: 100%;
+    padding-right: 45px;
+}
+
+.senha-box i {
+    position: absolute;
+    right: 15px;
+    color: #94a3b8;
+    font-size: 18px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.senha-box i:hover {
+    color: #00d4ff;
+}
+
+/* Botao */
 .btn-Entrar {
-     font-family: "Sora", sans-serif;
+    font-family: "Sora", sans-serif;
     background-color: #10b981;
     color: #021124;
     font-weight: 700;
@@ -213,7 +225,6 @@ input:focus {
     transform: translateY(-2px);
 }
 
-/* Links e Textos de suporte */
 .txt1, .txt2 {
     font-size: 13px;
     text-align: center;
@@ -227,7 +238,6 @@ input:focus {
 
 .txt1:hover {
     color: #00d4ff;
-
 }
 
 .Cadastre-se-txt {
@@ -240,25 +250,27 @@ input:focus {
     text-decoration: underline;
     transform: scale(1.2);
 }
-#checkbox{
+
+#checkbox {
     height: 20px;
     width: 20px;
 }
-.termos-container{
+
+.termos-container {
     display: flex;
     flex-direction: row;
     gap: 10px;
     color: white;
     font-size: 15px;
     align-items: center;
+    cursor: pointer;
 }
 
-.checkboxA{
+.checkboxA {
     color: rgb(143, 143, 143);
 }
-.erro-email,
-.erro-senha,
-.erro-confirmar {
+
+.erro-email, .erro-senha, .erro-confirmar, .erro-telefone {
     color: #ef4444;
     font-size: 12px;
     margin-left: 5px;
@@ -268,6 +280,7 @@ input:focus {
     font-size: 12px;
     margin-left: 5px;
 }
+
 .erro-termos {
     color: #ef4444;
     font-size: 12px;
@@ -278,9 +291,6 @@ input:focus {
     outline: 1px solid #ef4444;
     border-radius: 6px;
     padding: 5px;
-}
-.termos-container {
-    cursor: pointer;
 }
 
 @media (max-width: 1200px) {
