@@ -423,3 +423,223 @@ button:hover {
         align-items: center;
     }
 }
+
+/* ================= MODAIS CLIENTE ================= */
+.modal-cliente {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-cliente.ativo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-cliente-content {
+    background: linear-gradient(135deg, #001a4d 0%, #021124 100%);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0, 156, 134, 0.3);
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    border: 2px solid rgba(0, 156, 134, 0.3);
+    animation: slideUp 0.3s ease;
+    font-family: "Sora", sans-serif;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.modal-cliente-content h2 {
+    color: white;
+    font-family: "Outfit", sans-serif;
+    font-size: 24px;
+    margin: 0 0 15px 0;
+    text-align: center;
+}
+
+.modal-cliente-close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.modal-cliente-close:hover {
+    color: rgba(0, 156, 134, 1);
+    transform: rotate(90deg);
+}
+
+.form-cliente {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-cliente input,
+.form-cliente textarea,
+.form-cliente select {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(0, 156, 134, 0.3);
+    color: white;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-family: "Sora", sans-serif;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.form-cliente input::placeholder,
+.form-cliente textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.form-cliente input:focus,
+.form-cliente textarea:focus,
+.form-cliente select:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(0, 156, 134, 1);
+    box-shadow: 0 0 10px rgba(0, 156, 134, 0.3);
+}
+
+.form-cliente select option {
+    background: #021124;
+    color: white;
+}
+
+.form-cliente textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.erro-cliente {
+    color: #ff4757;
+    font-size: 12px;
+    font-family: "Sora", sans-serif;
+    display: none;
+    margin-top: -8px;
+}
+
+.erro-cliente.show {
+    display: block;
+}
+
+.btn-cliente-enviar {
+    background: linear-gradient(135deg, rgba(0, 156, 134, 1) 0%, rgba(0, 120, 100, 1) 100%);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-family: "Outfit", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.btn-cliente-enviar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 156, 134, 0.4);
+}
+
+.sucesso-cliente {
+    background: rgba(46, 204, 113, 0.2);
+    border: 2px solid #2ecc71;
+    color: #2ecc71;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-family: "Sora", sans-serif;
+    font-size: 14px;
+    margin-top: 10px;
+    animation: slideUp 0.3s ease;
+}
+
+.sem-pedidos {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    padding: 20px;
+}
+
+.pedido-item {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(0, 156, 134, 0.3);
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+
+.pedido-item strong {
+    color: rgba(0, 156, 134, 1);
+}
+
+.pedido-status {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.status-pendente {
+    background: rgba(255, 193, 7, 0.2);
+    color: #ffc107;
+    border: 1px solid rgba(255, 193, 7, 0.5);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .modal-cliente-content {
+        padding: 30px 20px;
+        max-width: 100%;
+        margin: 20px;
+    }
+
+    .modal-cliente-content h2 {
+        font-size: 20px;
+    }
+
+    .form-cliente input,
+    .form-cliente textarea,
+    .form-cliente select {
+        padding: 10px 12px;
+        font-size: 16px;
+    }
+}

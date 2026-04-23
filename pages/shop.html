@@ -100,6 +100,41 @@
             <button class="btn-orcamento" id="abrirModal">Solicitar Orçamento</button>
         </div>
     </main>
+
+    <!-- MODAL ORÇAMENTO -->
+    <div class="modal" id="modalOrcamento">
+        <div class="modal-content">
+            <h2 class="modal-title">Solicitar Orçamento</h2>
+
+            <input type="text" id="titulo" class="modal-input" placeholder="Título do projeto">
+            <span class="erro-modal" id="erro-titulo"></span>
+
+            <textarea id="descricao" class="modal-textarea" placeholder="Descrição do projeto (mín. 10 caracteres)"></textarea>
+            <span class="erro-modal" id="erro-descricao"></span>
+
+            <select id="tipo" class="modal-input">
+                <option value="">Selecione o tipo</option>
+                <option value="Website">Website</option>
+                <option value="Aplicativo">Aplicativo</option>
+                <option value="Sistema">Sistema</option>
+                <option value="Landing Page">Landing Page</option>
+                <option value="E-commerce">E-commerce</option>
+                <option value="Outro">Outro</option>
+            </select>
+            <span class="erro-modal" id="erro-tipo"></span>
+
+            <input type="date" id="prazo" class="modal-input">
+            <span class="erro-modal" id="erro-prazo"></span>
+
+            <div class="modal-erro-geral"></div>
+
+            <div class="modal-buttons">
+                <button class="btn-fechar" id="fecharModal">Fechar</button>
+                <button class="btn-enviar" id="btnEnviar">Enviar</button>
+            </div>
+        </div>
+    </div>
+
     <script src="../js/shop.js"></script>
 </body>
-</html> 
+</html>

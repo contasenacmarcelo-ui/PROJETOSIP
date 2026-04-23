@@ -29,6 +29,19 @@ fecharModal.addEventListener("click", () => {
 });
 
 
+// ================= LOCALSTORAGE =================
+function getOrcamentos() {
+    const dados = localStorage.getItem('sip_orcamentos');
+    return dados ? JSON.parse(dados) : [];
+}
+
+function salvarOrcamento(orcamento) {
+    const orcamentos = getOrcamentos();
+    orcamentos.push(orcamento);
+    localStorage.setItem('sip_orcamentos', JSON.stringify(orcamentos));
+}
+
+
 // ================= VALIDAÇÃO =================
 const btnEnviar = document.getElementById("btnEnviar");
 
@@ -95,6 +108,21 @@ btnEnviar.addEventListener("click", () => {
         erroGeral.classList.add("ativo");
         return;
     }
+
+    // CRIAR OBJETO INDIVIDUAL
+    const orcamento = {
+        id: Date.now(),
+        titulo: titulo.value.trim(),
+        descricao: descricao.value.trim(),
+        tipo: tipo.value,
+        prazo: prazo.value,
+        dataEnvio: new Date().toLocaleString('pt-BR'),
+        status: 'Pendente'
+    };
+
+    // SALVAR NO LOCALSTORAGE
+    salvarOrcamento(orcamento);
+    console.log('Orçamento salvo no localStorage:', orcamento);
 
     // SUCESSO
     erroGeral.textContent = "Solicitação enviada com sucesso!";

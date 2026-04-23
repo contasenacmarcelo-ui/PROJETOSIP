@@ -74,19 +74,85 @@
                     <div class="card-1">
                         <h1 class="title-2">Meus Pedidos</h1>
                         <i class="bi bi-clipboard2-pulse-fill"></i>
-                        <button>Ver Detalhes</button>
+                        <button id="btnVerDetalhes">Ver Detalhes</button>
                     </div>
                     <div class="card-2">
                         <h1 class="title-2">Solicitar Orçamento</h1>
                         <i class="bi bi-cash-coin"></i>
-                        <button>Novo Pedido</button>
+                        <button id="btnNovoPedido">Novo Pedido</button>
                     </div>
                     <div class="card-3">
                         <h1 class="title-2">Suporte</h1>
                         <i class="bi bi-headset"></i>
-                        <button>Obter Suporte</button>
+                        <button id="btnObterSuporte">Obter Suporte</button>
                     </div>
                 </section>
+
+                <!-- MODAL VER DETALHES -->
+                <div class="modal-cliente" id="modalDetalhes">
+                    <div class="modal-cliente-content">
+                        <button class="modal-cliente-close" id="fecharDetalhes">&times;</button>
+                        <h2>Meus Pedidos</h2>
+                        <div id="listaPedidos">
+                            <p class="sem-pedidos">Nenhum pedido encontrado.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MODAL NOVO PEDIDO -->
+                <div class="modal-cliente" id="modalNovoPedido">
+                    <div class="modal-cliente-content">
+                        <button class="modal-cliente-close" id="fecharNovoPedido">&times;</button>
+                        <h2>Novo Pedido</h2>
+                        <form id="formNovoPedido" class="form-cliente">
+                            <input type="text" id="pedidoTitulo" placeholder="Título do projeto" required>
+                            <span class="erro-cliente" id="erro-pedido-titulo"></span>
+
+                            <textarea id="pedidoDescricao" placeholder="Descrição do projeto (mín. 10 caracteres)" rows="3" required></textarea>
+                            <span class="erro-cliente" id="erro-pedido-descricao"></span>
+
+                            <select id="pedidoTipo" class="modal-input" required>
+                                <option value="">Selecione o tipo</option>
+                                <option value="Website">Website</option>
+                                <option value="Aplicativo">Aplicativo</option>
+                                <option value="Sistema">Sistema</option>
+                                <option value="Landing Page">Landing Page</option>
+                                <option value="E-commerce">E-commerce</option>
+                                <option value="Outro">Outro</option>
+                            </select>
+                            <span class="erro-cliente" id="erro-pedido-tipo"></span>
+
+                            <input type="date" id="pedidoPrazo" required>
+                            <span class="erro-cliente" id="erro-pedido-prazo"></span>
+
+                            <button type="submit" class="btn-cliente-enviar">Enviar Pedido</button>
+                        </form>
+                        <div class="sucesso-cliente" id="sucessoPedido" style="display:none;">
+                            ✓ Pedido enviado com sucesso!
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MODAL SUPORTE -->
+                <div class="modal-cliente" id="modalSuporte">
+                    <div class="modal-cliente-content">
+                        <button class="modal-cliente-close" id="fecharSuporte">&times;</button>
+                        <h2>Obter Suporte</h2>
+                        <form id="formSuporte" class="form-cliente">
+                            <input type="text" id="suporteAssunto" placeholder="Assunto" required>
+                            <span class="erro-cliente" id="erro-suporte-assunto"></span>
+
+                            <textarea id="suporteMensagem" placeholder="Descreva seu problema (mín. 10 caracteres)" rows="5" required></textarea>
+                            <span class="erro-cliente" id="erro-suporte-mensagem"></span>
+
+                            <button type="submit" class="btn-cliente-enviar">Enviar Chamado</button>
+                        </form>
+                        <div class="sucesso-cliente" id="sucessoSuporte" style="display:none;">
+                            ✓ Chamado aberto com sucesso! Entraremos em contato em breve.
+                        </div>
+                    </div>
+                </div>
+                
             </section>
         </nav>
 
