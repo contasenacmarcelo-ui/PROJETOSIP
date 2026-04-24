@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Datatype:wght@100..900&family=Readex+Pro:wght@160..700&family=Outfit:wght@100..900&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="shortcut icon" href="../../assets/images/Design%20sem%20nome.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/landing-pages.css">
+    <title>Landing Page Criativa | SIP</title>
+</head>
+<body>
+    <header>
+        <section class="side-left">
+            <a href="../shop.html"><img src="../../assets/images/acronimo_sip_iluminado_em_azul.png" alt="Logo"></a>
+            <span>Sistema Integrado de Portfolio</span>
+        </section>
+        <div class="nav-celular">
+            <div class="hamburger" id="btn-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <nav class="menu-mobile" id="menu-mobile"></nav>
+    </header>
+
+    <main>
+        <div class="landing-container">
+            <a href="../shop.html" class="back-link"><i class="bi bi-arrow-left"></i> Voltar para Shop</a>
+
+            <section class="creative-hero">
+                <h1>Crie algo extraordinário</h1>
+                <p>Transforme sua presença digital com uma landing page que encanta, converte e entrega resultados. Design moderno, animações suaves e uma experiência inesquecível.</p>
+                <button class="btn-primary">Começar Agora</button>
+            </section>
+
+            <section>
+                <h2 class="section-title text-center">Por que nos escolher?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="bi bi-lightning-charge"></i></div>
+                        <h3>Performance</h3>
+                        <p>Carregamento ultrarrápido e otimizado para SEO, garantindo que você esteja sempre à frente da concorrência.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="bi bi-palette"></i></div>
+                        <h3>Design Único</h3>
+                        <p>Cada projeto é tratado como uma obra de arte, com identidade visual marcante e experiência imersiva.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="bi bi-phone"></i></div>
+                        <h3>100% Responsivo</h3>
+                        <p>Adaptável a qualquer dispositivo, do desktop ao smartphone, sem perder qualidade ou funcionalidade.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="bi bi-shield-check"></i></div>
+                        <h3>Segurança</h3>
+                        <p>Implementação das melhores práticas de segurança para proteger seus dados e os de seus clientes.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="section-title text-center">O que dizem nossos clientes</h2>
+                <div class="testimonials">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"A equipe superou todas as expectativas. A landing page trouxe um aumento de 40% nas conversões em apenas um mês."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">AL</div>
+                            <div class="author-info">
+                                <h4>Ana Lima</h4>
+                                <span>CEO, StartUp X</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"Profissionalismo e criatividade em cada detalhe. Recomendo para qualquer empresa que queira se destacar online."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">BR</div>
+                            <div class="author-info">
+                                <h4>Bruno Rocha</h4>
+                                <span>Marketing Director</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"O design é simplesmente incrível. Conseguimos transmitir exatamente a identidade da nossa marca de forma elegante."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">CM</div>
+                            <div class="author-info">
+                                <h4>Carla Mendes</h4>
+                                <span>Founder, Creative Co</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cta-section">
+                <h2>Pronto para transformar sua ideia em realidade?</h2>
+                <p>Entre em contato e descubra como podemos criar a landing page perfeita para o seu negócio.</p>
+                <button class="btn-primary">Solicitar Orçamento</button>
+            </section>
+        </div>
+    </main>
+
+    <footer class="landing-footer">
+        <p>&copy; 2024-2026 Sistema Integrado de Portfolio. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const btnMenu = document.getElementById('btn-menu');
+        const menuMobile = document.getElementById('menu-mobile');
+        btnMenu.addEventListener('click', () => {
+            btnMenu.classList.toggle('ativo');
+            menuMobile.classList.toggle('ativo');
+        });
+    </script>
+</body>
+</html>

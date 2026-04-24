@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Datatype:wght@100..900&family=Readex+Pro:wght@160..700&family=Outfit:wght@100..900&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="shortcut icon" href="../../assets/images/Design%20sem%20nome.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/landing-pages.css">
+    <title>Sistema de Gestão | SIP</title>
+</head>
+<body>
+    <header>
+        <section class="side-left">
+            <a href="../shop.html"><img src="../../assets/images/acronimo_sip_iluminado_em_azul.png" alt="Logo"></a>
+            <span>Sistema Integrado de Portfolio</span>
+        </section>
+        <div class="nav-celular">
+            <div class="hamburger" id="btn-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <nav class="menu-mobile" id="menu-mobile"></nav>
+    </header>
+
+    <main>
+        <div class="landing-container">
+            <a href="../shop.html" class="back-link"><i class="bi bi-arrow-left"></i> Voltar para Shop</a>
+            <h1 class="section-title">Sistema de Gestão</h1>
+            <p class="section-subtitle">Um painel administrativo completo para controle de usuários, projetos, tarefas e relatórios. Organize sua operação com eficiência e inteligência.</p>
+
+            <div class="system-layout">
+                <aside class="sidebar">
+                    <div class="sidebar-title"><i class="bi bi-kanban"></i> GestorPro</div>
+                    <ul class="sidebar-menu">
+                        <li class="active"><i class="bi bi-speedometer2"></i> Dashboard</li>
+                        <li><i class="bi bi-people-fill"></i> Usuários</li>
+                        <li><i class="bi bi-folder"></i> Projetos</li>
+                        <li><i class="bi bi-check2-square"></i> Tarefas</li>
+                        <li><i class="bi bi-bar-chart-line"></i> Relatórios</li>
+                        <li><i class="bi bi-bell"></i> Notificações</li>
+                        <li><i class="bi bi-gear"></i> Configurações</li>
+                    </ul>
+                </aside>
+
+                <div class="system-main">
+                    <div class="status-cards">
+                        <div class="status-card">
+                            <h4>Total de Usuários</h4>
+                            <div class="value">1.248</div>
+                        </div>
+                        <div class="status-card">
+                            <h4>Projetos Ativos</h4>
+                            <div class="value">36</div>
+                        </div>
+                        <div class="status-card">
+                            <h4>Tarefas Pendentes</h4>
+                            <div class="value">142</div>
+                        </div>
+                        <div class="status-card">
+                            <h4>Concluídas Hoje</h4>
+                            <div class="value">28</div>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <h3 class="chart-title">Progresso dos Projetos</h3>
+                        <div class="chart-bars">
+                            <div class="chart-bar h-70"></div>
+                            <div class="chart-bar h-45"></div>
+                            <div class="chart-bar h-90"></div>
+                            <div class="chart-bar h-30"></div>
+                            <div class="chart-bar h-60"></div>
+                            <div class="chart-bar h-85"></div>
+                        </div>
+                        <div class="chart-labels">
+                            <span>Proj A</span><span>Proj B</span><span>Proj C</span><span>Proj D</span><span>Proj E</span><span>Proj F</span>
+                        </div>
+                    </div>
+
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Projeto</th>
+                                <th>Responsável</th>
+                                <th>Prazo</th>
+                                <th>Progresso</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Redesign Website</td>
+                                <td>Mariana Souza</td>
+                                <td>20/06/2025</td>
+                                <td>75%</td>
+                                <td><span class="status-badge status-completed">Em Andamento</span></td>
+                            </tr>
+                            <tr>
+                                <td>App Mobile v2</td>
+                                <td>Lucas Pereira</td>
+                                <td>30/06/2025</td>
+                                <td>40%</td>
+                                <td><span class="status-badge status-pending">Pendente</span></td>
+                            </tr>
+                            <tr>
+                                <td>Integração API</td>
+                                <td>Julia Costa</td>
+                                <td>18/06/2025</td>
+                                <td>90%</td>
+                                <td><span class="status-badge status-completed">Em Andamento</span></td>
+                            </tr>
+                            <tr>
+                                <td>Relatórios Automáticos</td>
+                                <td>Ricardo Lima</td>
+                                <td>25/06/2025</td>
+                                <td>20%</td>
+                                <td><span class="status-badge status-pending">Pendente</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="landing-footer">
+        <p>&copy; 2024-2026 Sistema Integrado de Portfolio. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const btnMenu = document.getElementById('btn-menu');
+        const menuMobile = document.getElementById('menu-mobile');
+        btnMenu.addEventListener('click', () => {
+            btnMenu.classList.toggle('ativo');
+            menuMobile.classList.toggle('ativo');
+        });
+    </script>
+</body>
+</html>

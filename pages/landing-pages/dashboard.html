@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Datatype:wght@100..900&family=Readex+Pro:wght@160..700&family=Outfit:wght@100..900&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="shortcut icon" href="../../assets/images/Design%20sem%20nome.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../css/landing-pages.css">
+    <title>Dashboard Financeiro | SIP</title>
+</head>
+<body>
+    <header>
+        <section class="side-left">
+            <a href="../shop.html"><img src="../../assets/images/acronimo_sip_iluminado_em_azul.png" alt="Logo"></a>
+            <span>Sistema Integrado de Portfolio</span>
+        </section>
+        <div class="nav-celular">
+            <div class="hamburger" id="btn-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <nav class="menu-mobile" id="menu-mobile"></nav>
+    </header>
+
+    <main>
+        <div class="landing-container">
+            <a href="../shop.html" class="back-link"><i class="bi bi-arrow-left"></i> Voltar para Shop</a>
+            <h1 class="section-title">Dashboard Financeiro</h1>
+            <p class="section-subtitle">Painel de controle completo com métricas em tempo real, gráficos interativos e relatórios detalhados. Uma demonstração de como organizamos dados complexos de forma visual e intuitiva.</p>
+
+            <div class="dashboard-layout">
+                <aside class="sidebar">
+                    <div class="sidebar-title"><i class="bi bi-grid-1x2-fill"></i> FinanceHub</div>
+                    <ul class="sidebar-menu">
+                        <li class="active"><i class="bi bi-house-door"></i> Visão Geral</li>
+                        <li><i class="bi bi-graph-up-arrow"></i> Relatórios</li>
+                        <li><i class="bi bi-wallet2"></i> Transações</li>
+                        <li><i class="bi bi-people"></i> Clientes</li>
+                        <li><i class="bi bi-gear"></i> Configurações</li>
+                    </ul>
+                </aside>
+
+                <div>
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <div class="metric-label">Receita Total</div>
+                            <div class="metric-value">R$ 124K</div>
+                            <div class="metric-change positive">+12,5% este mês</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">Usuários Ativos</div>
+                            <div class="metric-value">8.432</div>
+                            <div class="metric-change positive">+5,2% este mês</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">Novas Vendas</div>
+                            <div class="metric-value">1.205</div>
+                            <div class="metric-change positive">+8,1% este mês</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-label">Taxa de Conversão</div>
+                            <div class="metric-value">3,4%</div>
+                            <div class="metric-change negative">-0,2% este mês</div>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <h3 class="chart-title">Receita Mensal</h3>
+                        <div class="chart-bars">
+                            <div class="chart-bar h-45"></div>
+                            <div class="chart-bar h-60"></div>
+                            <div class="chart-bar h-35"></div>
+                            <div class="chart-bar h-80"></div>
+                            <div class="chart-bar h-55"></div>
+                            <div class="chart-bar h-90"></div>
+                            <div class="chart-bar h-70"></div>
+                        </div>
+                        <div class="chart-labels">
+                            <span>Jan</span><span>Fev</span><span>Mar</span><span>Abr</span><span>Mai</span><span>Jun</span><span>Jul</span>
+                        </div>
+                    </div>
+
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Cliente</th>
+                                <th>Data</th>
+                                <th>Valor</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#1024</td>
+                                <td>Empresa Alpha</td>
+                                <td>15/06/2025</td>
+                                <td>R$ 4.500,00</td>
+                                <td><span class="status-badge status-completed">Concluído</span></td>
+                            </tr>
+                            <tr>
+                                <td>#1025</td>
+                                <td>Beta Corp</td>
+                                <td>14/06/2025</td>
+                                <td>R$ 2.300,00</td>
+                                <td><span class="status-badge status-completed">Concluído</span></td>
+                            </tr>
+                            <tr>
+                                <td>#1026</td>
+                                <td>Gamma LTDA</td>
+                                <td>13/06/2025</td>
+                                <td>R$ 7.100,00</td>
+                                <td><span class="status-badge status-pending">Pendente</span></td>
+                            </tr>
+                            <tr>
+                                <td>#1027</td>
+                                <td>Delta Tech</td>
+                                <td>12/06/2025</td>
+                                <td>R$ 1.850,00</td>
+                                <td><span class="status-badge status-completed">Concluído</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="landing-footer">
+        <p>&copy; 2024-2026 Sistema Integrado de Portfolio. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const btnMenu = document.getElementById('btn-menu');
+        const menuMobile = document.getElementById('menu-mobile');
+        btnMenu.addEventListener('click', () => {
+            btnMenu.classList.toggle('ativo');
+            menuMobile.classList.toggle('ativo');
+        });
+    </script>
+</body>
+</html>
